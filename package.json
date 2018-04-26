@@ -1,0 +1,23 @@
+{
+  "name": "tuto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode development --progress",
+    "autobuild": "webpack --mode development --progress --watch"
+  },
+  "author": "Imran",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.0.15"
+  },
+  "dependencies": {
+    "itowns": "file:itowns-2.3.0.tgz",
+    "proj4": "^2.4.4",
+    "three": "^0.92.0",
+    "three.meshline": "^1.0.3"
+  }
+}
