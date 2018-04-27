@@ -1,0 +1,18 @@
+{
+    "type": "color",
+    "url": "./data/parcelles_sample.json",
+    "protocol": "rasterizer",
+    "id": "parcelles",
+    "name": "parcelles",
+    "transparent": true,
+    "zoom" : {
+        "min": 8,
+        "max": 14
+    },
+    "style": {
+        "fill": "red",
+        "fillOpacity": 0.8,
+        "stroke": "cyan",
+        "stroke-width": 50
+    }
+}
