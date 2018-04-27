@@ -112,8 +112,6 @@ GuiTools.prototype.addGeometryLayerGUI = function addGeometryLayerGUI(layer) {
     }).bind(this));
     folder.add({ wireframe: false }, 'wireframe').onChange((function updateWireframe(value) {
         layer.wireframe = value;
-        console.log('value ', value, '  ---> ', layer);
-        
         this.view.notifyChange(true);
     }).bind(this));
 };
