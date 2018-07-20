@@ -61,7 +61,7 @@ let layersLoaded = async function loadLayers() {
     const parcelles = await globeView.addLayer(parcelles_raster).then(() => true).catch((r) => { console.error(r); return false });
     console.log('--parcelles done');
     console.log('loading bati simulé');
-    let geomLayer = await createGeomLayer('../data/simuls_sample.json', 'simulsFeats', globeView);
+    let geomLayer = await createGeomLayer('./data/simuls_sample.json', 'simulsFeats', globeView);
     let simuls = await globeView.addLayer(geomLayer).then(() => true).catch((r) => { console.error(r); return false });;
     console.log('bati simulé done');
     return dark && batitopo && parcelles && simuls;
