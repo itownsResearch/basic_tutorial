@@ -15,10 +15,10 @@
     "webpack-cli": "^2.0.15"
   },
   "dependencies": {
-    "dat.gui": "^0.7.1",
+    "dat.gui": "^0.7.2",
     "itowns": "file:itowns-2.3.0.tgz",
     "proj4": "^2.4.4",
-    "three": "^0.92.0",
+    "three": "^0.89.0",
     "three.meshline": "^1.0.3"
   }
 }

@@ -37,7 +37,7 @@ function pickingGeomLayer(event) {
     const layer_is_visible = globeView.getLayers(l => l.id == 'simulsFeats')[0].visible;
     if (!layer_is_visible)
         return;
-    let results = globeView.pickObjectsAt(event, 'simulsFeats');
+    let results = globeView.pickObjectsAt(event, 5, 'simulsFeats');
     if (results.length < 1)
         return;
     htmlInfo.innerHTML = 'Batiment';

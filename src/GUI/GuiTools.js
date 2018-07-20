@@ -63,15 +63,15 @@ GuiTools.prototype.addImageryLayerGUI = function addImageryLayerGUI(layer) {
     var folder = this.colorGui.addFolder(layer.id);
     folder.add({ visible: layer.visible }, 'visible').onChange((function updateVisibility(value) {
         layer.visible = value;
-        this.view.notifyChange(true);
+        this.view.notifyChange(layer);
     }).bind(this));
     folder.add({ opacity: layer.opacity }, 'opacity').min(0.0).max(1.0).onChange((function updateOpacity(value) {
         layer.opacity = value;
-        this.view.notifyChange(true);
+        this.view.notifyChange(layer);
     }).bind(this));
     folder.add({ frozen: layer.frozen }, 'frozen').onChange((function updateFrozen(value) {
         layer.frozen = value;
-        this.view.notifyChange(true);
+        this.view.notifyChange(layer);
     }).bind(this));
 };
 
@@ -104,15 +104,15 @@ GuiTools.prototype.addGeometryLayerGUI = function addGeometryLayerGUI(layer) {
     var folder = this.geometryGui.addFolder(layer.id);
     folder.add({ visible: true }, 'visible').onChange((function updateVisibility(value) {
         layer.visible = value;
-        this.view.notifyChange(true);
+        this.view.notifyChange(layer);
     }).bind(this));
     folder.add({ opacity: 1.0 }, 'opacity').min(0.0).max(1.0).onChange((function updateOpacity(value) {
         layer.opacity = value;
-        this.view.notifyChange(true);
+        this.view.notifyChange(layer);
     }).bind(this));
     folder.add({ wireframe: false }, 'wireframe').onChange((function updateWireframe(value) {
         layer.wireframe = value;
-        this.view.notifyChange(true);
+        this.view.notifyChange(layer);
     }).bind(this));
 };
 
