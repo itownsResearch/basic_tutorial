@@ -4,6 +4,7 @@ import bati from './layers/bati';
 import parcelles_raster from './layers/parcelles_raster';
 import GuiTools from './GUI/GuiTools';
 import { createGeomLayer } from './utils/Json2GeomLayer';
+import { addMeshToScene } from './utils/CreateMesh'
 
 let positionOnGlobe = { longitude: 2.46315, latitude: 48.819609, altitude: 5500 };
 let viewerDiv = document.getElementById('viewerDiv');
@@ -74,6 +75,7 @@ globeView.addEventListener(itowns.GLOBE_VIEW_EVENTS.GLOBE_INITIALIZED, async () 
         console.log('adding layers to menu!');
         menuGlobe.addImageryLayersGUI(globeView.getLayers(l => l.type === 'color'));
         menuGlobe.addGeometryLayersGUI(globeView.getLayers(l => l.type === 'geometry' && l.id != 'globe'));
+        addMeshToScene(globeView);
         console.log('menu completed');
         window.addEventListener('mousemove', pickingRaster, false);
         window.addEventListener('mousemove', pickingGeomLayer, false);
