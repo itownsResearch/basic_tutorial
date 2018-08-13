@@ -68,6 +68,7 @@ let layersLoaded = async function loadLayers() {
     return dark && batitopo && parcelles && simuls;
 }();
 
+let time = 0;
 globeView.addEventListener(itowns.GLOBE_VIEW_EVENTS.GLOBE_INITIALIZED, async () => {
     console.log('globe initialized');
     if (await layersLoaded) {
@@ -79,8 +80,23 @@ globeView.addEventListener(itowns.GLOBE_VIEW_EVENTS.GLOBE_INITIALIZED, async () 
         console.log('menu completed');
         window.addEventListener('mousemove', pickingRaster, false);
         window.addEventListener('mousemove', pickingGeomLayer, false);
+        animate();
     } else {
         console.error('something bad happened during layers loading..');
     }
 });
 
+
+function animate(){
+    let cyl = globeView.myObj;
+    cyl.rotation.z = Math.sin(time) * 2.0;
+    cyl.material.uniforms.time.value = time;
+    cyl.updateMatrixWorld();
+
+    time += 0.01;
+    if (time > 2*Math.PI){
+        time = 0.1;//-Math.PI/2;
+    }
+    globeView.notifyChange(true);
+    requestAnimationFrame(animate);
+};
